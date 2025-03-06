@@ -1,0 +1,6 @@
+[submodule "DeepSeek-R1-Distill-Qwen-32B"]
+	path = DeepSeek-R1-Distill-Qwen-32B
+	url = https://github.com/if111111111111111111111/DeepSeek-R1-Distill-Qwen-32B.git
+[submodule "LLaMA-Factory"]
+	path = LLaMA-Factory
+	url = https://github.com/if111111111111111111111/LLaMA-Factory.git
