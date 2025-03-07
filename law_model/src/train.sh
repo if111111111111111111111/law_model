@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# 设置环境变量
 export FORCE_TORCHRUN=1
 export CUDA_VISIBLE_DEVICES=0
 
-# 执行训练命令，使用外部 DeepSpeed 配置文件
 /root/miniconda3/envs/llama_factory/bin/llamafactory-cli train \
     --stage sft \
     --do_train \
@@ -30,13 +28,14 @@ export CUDA_VISIBLE_DEVICES=0
     --bf16 True \
     --gradient_checkpointing \
     --max_grad_norm 1.0 \
-    --flash_attn fa2 \   # 启用 FlashAttention 2
+    --flash_attn fa2 \
     --deepspeed "./law_model/configs/ds_config.json"
 
-# 检查命令执行状态
 if [ $? -eq 0 ]; then
     echo "Training completed successfully"
 else
     echo "Training failed"
     exit 1
 fi
+
+
